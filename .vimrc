@@ -20,3 +20,7 @@ to define different mappings use lines like these in your |.vimrc|:
 nmap <silent> <Leader>f <Plug>(CommandT)
 " nmap <silent> <Leader>b <Plug>(CommandTBuffer)
 " nmap <silent> <Leader>j <Plug>(CommandTJump)
+
+" NERDTree opens with '\', '|' opens current file on NERDTree
+nmap \ :NERDTreeToggle<CR>
+nmap \| :NERDTreeFind<CR>
