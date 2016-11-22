@@ -45,3 +45,6 @@ set softtabstop=2
 " Use Ctrl+(h/l) to cycle windows
 nmap <silent> <c-h> :tabprevious<CR>
 nmap <silent> <c-l> :tabnext<CR>
+
+" Automatically remove whitespace before saving
+autocmd BufWritePre * %s/\s\+$//e
