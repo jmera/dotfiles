@@ -48,3 +48,7 @@ nmap <silent> <c-l> :tabnext<CR>
 
 " Automatically remove whitespace before saving
 autocmd BufWritePre * %s/\s\+$//e
+
+" mouse things
+set mouse=a
+set ttymouse=xterm2 " make the thing faster
