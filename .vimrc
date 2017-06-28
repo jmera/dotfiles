@@ -42,6 +42,9 @@ set expandtab
 set shiftwidth=2
 set softtabstop=2
 
+" comment with ,/
+nmap <silent> <Leader>/ gcc
+
 " Use Ctrl+(h/l) to cycle windows
 nmap <silent> <c-h> :tabprevious<CR>
 nmap <silent> <c-l> :tabnext<CR>
@@ -52,3 +55,7 @@ autocmd BufWritePre * %s/\s\+$//e
 " mouse things
 set mouse=a
 set ttymouse=xterm2 " make the thing faster
+
+" Copy the name of the current file to the clipboard
+nmap ,C :let @* = expand("#").":".line(".")<CR>:echo "Copied:".expand("#").":".line(".")<CR>
+nmap ,c :let @* = expand("#")<CR>:echo "Copied: ".expand("#")<CR>
