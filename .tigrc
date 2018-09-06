@@ -1,0 +1,31 @@
+set tab-size = 2
+
+set main-view = date:relative id:yes author:full,width=20 commit-title:yes,graph=yes,refs=yes
+set diff-highlight = /usr/local/opt/git/share/git-core/contrib/diff-highlight/diff-highlight
+
+color  default  default  default  normal
+
+# | color   | value |
+# |---------|-------|
+# | blue    | 33    |
+# | cyan    | 37    |
+# | green   | 64    |
+# | magenta | 125   |
+# | yellow  | 136   |
+# | red     | 160   |
+# | black   | 235   |
+# | white   | 254   |
+
+color  cursor          254  64       bold
+color  date            64   default
+color  id              125  default
+color  author          37   default
+color  main-head       160  default  underline
+color  main-ref        160  default
+color  main-remote     160  default
+color  main-tag        136  default
+color  main-local-tag  136  default
+color  title-blur      254  37
+color  title-focus     254  37       bold
+color  status          64   default
+color  graph-commit    37   default
