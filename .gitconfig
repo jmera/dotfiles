@@ -4,6 +4,7 @@
   initials = jm
 [core]
   pager = /usr/local/opt/git/share/git-core/contrib/diff-highlight/diff-highlight | less
+  excludesFile = /Users/julichm/.gitignore
 [color "diff-highlight"]
   oldHighlight = "254 160"
   newHighlight = "254 64"
