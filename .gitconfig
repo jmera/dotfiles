@@ -1,6 +1,6 @@
 [user]
   name = Julich Mera
-  email = julich.mera@gmail.com
+  email = julichm@zillowgroup.com
   initials = jm
 [core]
   pager = /usr/local/opt/git/share/git-core/contrib/diff-highlight/diff-highlight | less
