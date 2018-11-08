@@ -16,8 +16,6 @@ let g:solarized_termcolors=256
 set mouse=a
 set ttymouse=xterm2 " make the thing faster
 
-set wildignore+=node_modules,tmp,.git,*\.png,*\.gif,*\.ico,*\.jpg,*\.jpeg,*\.svg,*\.swp,*\.swo
-
 """"" NERDTree
 " opens with '\', '|' opens current file on NERDTree
 nmap \ :NERDTreeToggle<CR>
@@ -41,16 +39,19 @@ map <leader>/ gcc
 " https://stackoverflow.com/q/13322161/2095714
 set shellpipe=>
 
-"""" In insert mode, ctrl+w backspaces over everything
+""""" In insert mode, ctrl+w backspaces over everything
 set backspace=indent,eol,start
 
-" Define different mappings for Command-T
+"""" Command-T
+" Wait 25 milliseconds before updating the match list
+let g:CommandTInputDebounce = 25
+
+" Define different mappings
 map <leader>F :CommandTFlush<CR>:CommandT<CR>
 map <leader>f :CommandT<CR>
 
-" Command-T
-" Wait 25 milliseconds before updating the match list
-let g:CommandTInputDebounce = 25
+" Ignore node_modules & bower_components
+let g:CommandTWildIgnore=&wildignore . "*/node_modules,*/bower_components,*/tmp,\.png,*\.gif,*\.ico,*\.jpg,*\.jpeg,*\.svg"
 
 " Default file scanner, 'ruby' is slow
 let g:CommandTFileScanner = "find"
