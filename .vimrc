@@ -129,7 +129,7 @@ function! StripTrailingWhitespace()
   'a
 endfunction
 
-autocmd BufWritePre *.rb,*.yml,*.js,*.jsx,*.css,*.less,*.sass,*.scss,*.html,*.xml,*.erb,*.haml call StripTrailingWhitespace()
+autocmd BufWritePre *.rb,*.yml,*.js,*.jsx,*.css,*.less,*.sass,*.scss,*.html,*.xml,*.erb,*.haml,*.sh call StripTrailingWhitespace()
 
 " Faster scrolling
 nnoremap <C-e>  3<C-e>
