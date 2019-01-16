@@ -50,11 +50,6 @@ let g:CommandTInputDebounce = 25
 map <leader>F :CommandTFlush<CR>:CommandT<CR>
 map <leader>f :CommandT<CR>
 
-set wildignore=.git,.hg,.svn,*.swp,*.swo
-
-" Ignore node_modules & bower_components
-let g:CommandTWildIgnore = &wildignore . "*/node_modules,*/bower_components,*/tmp,\.png,*\.gif,*\.ico,*\.jpg,*\.jpeg,*\.svg"
-
 " Default file scanner, 'ruby' is slow
 let g:CommandTFileScanner = "find"
 
