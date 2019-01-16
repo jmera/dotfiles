@@ -1,0 +1,50 @@
+#/bin/sh bash
+
+set -e
+
+SCRIPT_DIR=$PWD
+CLONE_DIR="$HOME/.vim/pack/$USER/start/"
+
+if [ ! -d "$CLONE_DIR" ]; then
+  echo "Making directory '$CLONE_DIR' to clone dependencies"
+  mkdir -p $CLONE_DIR
+
+  DEPS=(
+    airblade/vim-gitgutter.git
+    altercation/vim-colors-solarized.git
+    jiangmiao/auto-pairs.git
+    keith/rspec.vim.git
+    mileszs/ack.vim.git
+    mxw/vim-jsx.git
+    pangloss/vim-javascript.git
+    scrooloose/nerdtree.git
+    sstallion/vim-wildignore.git
+    tpope/vim-abolish.git
+    tpope/vim-commentary.git
+    tpope/vim-endwise.git
+    tpope/vim-fugitive.git
+    tpope/vim-rails.git
+    tpope/vim-surround.git
+    vim-ruby/vim-ruby.git
+    wincent/command-t.git
+    wincent/terminus.git
+  )
+
+  echo "Cloning dependencies in '$CLONE_DIR'"
+  cd $CLONE_DIR
+
+  for DEP in ${DEPS[@]}; do
+    echo "Cloning $DEP..."
+    git clone "git@github.com:$DEP" --verbose
+  done
+else
+  echo "'$CLONE_DIR' already exists. Skipping cloning dependencies."
+fi
+
+echo "Creating symlinks for dotfiles..."
+cd $SCRIPT_DIR
+DOTFILES=$(git ls-files | grep "^\.")
+echo "$DOTFILES" | xargs -t -I % ln -sv "$SCRIPT_DIR/"% "$HOME"
+
+echo "Creating symlink for wildignore"
+ln -sv "$SCRIPT_DIR/wildignore" "$HOME/.vim/"
