@@ -3,7 +3,7 @@
 set -e
 
 SCRIPT_DIR=$PWD
-CLONE_DIR="$HOME/.vim/pack/$USER/start/"
+CLONE_DIR="$HOME/.vim/pack/$(whoami)/start/"
 
 if [ ! -d "$CLONE_DIR" ]; then
   echo "Making directory '$CLONE_DIR' to clone dependencies"
