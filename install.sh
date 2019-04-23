@@ -48,3 +48,6 @@ echo "$DOTFILES" | xargs -t -I % ln -sv "$SCRIPT_DIR/"% "$HOME"
 
 echo "Creating symlink for wildignore"
 ln -sv "$SCRIPT_DIR/wildignore" "$HOME/.vim/"
+
+cd "$CLONE_DIR/command-t"
+rake make
