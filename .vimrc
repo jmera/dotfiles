@@ -9,7 +9,7 @@ endif
 
 filetype plugin indent on
 colorscheme solarized
-set background=light
+set background=dark
 let g:solarized_termcolors=256
 
 """"" mouse things
@@ -129,7 +129,7 @@ function! StripTrailingWhitespace()
   'a
 endfunction
 
-autocmd BufWritePre *.rb,*.yml,*.js,*.jsx,*.css,*.less,*.sass,*.scss,*.html,*.xml,*.erb,*.haml,*.sh,Dockerfile* call StripTrailingWhitespace()
+autocmd BufWritePre *.rb,*.yml,*.js,*.jsx,*.css,*.less,*.sass,*.scss,*.html,*.xml,*.erb,*.haml,*.sh,Dockerfile*,*.rake call StripTrailingWhitespace()
 
 " Faster scrolling
 nnoremap <C-e>  3<C-e>
