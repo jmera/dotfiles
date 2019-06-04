@@ -93,6 +93,9 @@ set splitright
 set splitbelow
 set scrolloff=3
 
+" utf-8 encoding
+set encoding=utf-8
+
 set list        " Show whitespace
 set listchars=trail:·,tab:>-
 
