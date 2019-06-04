@@ -34,8 +34,9 @@ if [ ! -d "$CLONE_DIR" ]; then
   cd $CLONE_DIR
 
   for DEP in ${DEPS[@]}; do
-    echo "Cloning $DEP..."
-    git clone "git@github.com:$DEP" --verbose
+    REPO="https://github.com/$DEP"
+    echo "Cloning from $REPO..."
+    git clone $REPO --verbose
   done
 else
   echo "'$CLONE_DIR' already exists. Skipping cloning dependencies."
