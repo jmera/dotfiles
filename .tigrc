@@ -1,7 +1,7 @@
 set tab-size = 2
 
 set main-view = date:relative id:yes author:full,width=20 commit-title:yes,graph=yes,refs=yes
-set diff-highlight = /usr/local/opt/git/share/git-core/contrib/diff-highlight/diff-highlight
+set diff-highlight = less
 
 color  default  default  default  normal
 

@@ -54,8 +54,8 @@ map <leader>f :CommandT<CR>
 let g:CommandTFileScanner = "find"
 
 " Copy current file path to system clipboard
-map <leader>cp :let @* = fnamemodify(expand("%"), ":.")<CR>:echo "Copied: ".fnamemodify(expand("%"), ":.")<CR>
-map <leader>C :let @* = fnamemodify(expand("%"), ":.").":".line(".")<CR>:echo "Copied: ".fnamemodify(expand("%"), ":.").":".line(".")<CR>
+map <leader>cp :let @+ = fnamemodify(expand("%"), ":.")<CR>:echo "Copied: ".fnamemodify(expand("%"), ":.")<CR>
+map <leader>C :let @+ = fnamemodify(expand("%"), ":.").":".line(".")<CR>:echo "Copied: ".fnamemodify(expand("%"), ":.").":".line(".")<CR>
 
 " Highlight search matches (*)
 set hlsearch
