@@ -3,4 +3,6 @@
 	email = julich.mera@gmail.com
 	initials = jm
 [core]
-	pager = less
+	pager = diff-highlight | less
+[interactive]
+	diffFilter = diff-highlight | less
