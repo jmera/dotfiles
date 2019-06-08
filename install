@@ -7,7 +7,7 @@ VIM_DEPENDENCY_DIR="$HOME/.vim/pack/$(whoami)/start/"
 
 if [ ! -d "$VIM_DEPENDENCY_DIR" ]; then
   echo "Making directory '$VIM_DEPENDENCY_DIR' to clone dependencies"
-  mkdir -p $VIM_DEPENDENCY_DIR
+  mkdir --parents --verbose $VIM_DEPENDENCY_DIR
 
   DEPS=(
     airblade/vim-gitgutter.git
