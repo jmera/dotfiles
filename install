@@ -31,9 +31,7 @@ DEPS=(
 )
 
 for DEP in ${DEPS[@]}; do
-  REPO="https://github.com/$DEP"
-  echo "Cloning from $REPO..."
-  git clone $REPO --verbose
+  git clone --verbose "https://github.com/$DEP"
 done
 
 echo "Creating symlinks for dotfiles..."
