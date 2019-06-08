@@ -10,28 +10,28 @@ mkdir --parents --verbose $VIM_DEPENDENCY_DIR
 cd $VIM_DEPENDENCY_DIR
 
 DEPS=(
-  airblade/vim-gitgutter.git
-  altercation/vim-colors-solarized.git
-  jiangmiao/auto-pairs.git
-  keith/rspec.vim.git
-  mileszs/ack.vim.git
-  mxw/vim-jsx.git
-  pangloss/vim-javascript.git
-  scrooloose/nerdtree.git
-  sstallion/vim-wildignore.git
-  tpope/vim-abolish.git
-  tpope/vim-commentary.git
-  tpope/vim-endwise.git
-  tpope/vim-fugitive.git
-  tpope/vim-rails.git
-  tpope/vim-surround.git
-  vim-ruby/vim-ruby.git
-  wincent/command-t.git
-  wincent/terminus.git
+  airblade/vim-gitgutter
+  altercation/vim-colors-solarized
+  jiangmiao/auto-pairs
+  keith/rspec.vim
+  mileszs/ack.vim
+  mxw/vim-jsx
+  pangloss/vim-javascript
+  scrooloose/nerdtree
+  sstallion/vim-wildignore
+  tpope/vim-abolish
+  tpope/vim-commentary
+  tpope/vim-endwise
+  tpope/vim-fugitive
+  tpope/vim-rails
+  tpope/vim-surround
+  vim-ruby/vim-ruby
+  wincent/command-t
+  wincent/terminus
 )
 
 for DEP in ${DEPS[@]}; do
-  git clone --verbose "https://github.com/$DEP"
+  git clone --verbose "https://github.com/$DEP.git"
 done
 
 echo "Creating symlinks for dotfiles..."
