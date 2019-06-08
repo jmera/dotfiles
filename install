@@ -3,11 +3,11 @@
 set -e
 
 SCRIPT_DIR=$PWD
-CLONE_DIR="$HOME/.vim/pack/$(whoami)/start/"
+VIM_DEPENDENCY_DIR="$HOME/.vim/pack/$(whoami)/start/"
 
-if [ ! -d "$CLONE_DIR" ]; then
-  echo "Making directory '$CLONE_DIR' to clone dependencies"
-  mkdir -p $CLONE_DIR
+if [ ! -d "$VIM_DEPENDENCY_DIR" ]; then
+  echo "Making directory '$VIM_DEPENDENCY_DIR' to clone dependencies"
+  mkdir -p $VIM_DEPENDENCY_DIR
 
   DEPS=(
     airblade/vim-gitgutter.git
@@ -30,8 +30,8 @@ if [ ! -d "$CLONE_DIR" ]; then
     wincent/terminus.git
   )
 
-  echo "Cloning dependencies in '$CLONE_DIR'"
-  cd $CLONE_DIR
+  echo "Cloning dependencies in '$VIM_DEPENDENCY_DIR'"
+  cd $VIM_DEPENDENCY_DIR
 
   for DEP in ${DEPS[@]}; do
     REPO="https://github.com/$DEP"
@@ -39,7 +39,7 @@ if [ ! -d "$CLONE_DIR" ]; then
     git clone $REPO --verbose
   done
 else
-  echo "'$CLONE_DIR' already exists. Skipping cloning dependencies."
+  echo "'$VIM_DEPENDENCY_DIR' already exists. Skipping cloning dependencies."
 fi
 
 echo "Creating symlinks for dotfiles..."
@@ -50,5 +50,5 @@ echo "$DOTFILES" | xargs -t -I % ln -sv "$SCRIPT_DIR/"% "$HOME"
 echo "Creating symlink for wildignore"
 ln -sv "$SCRIPT_DIR/wildignore" "$HOME/.vim/"
 
-cd "$CLONE_DIR/command-t"
+cd "$VIM_DEPENDENCY_DIR/command-t"
 rake make
