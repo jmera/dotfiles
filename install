@@ -7,6 +7,7 @@ VIM_DEPENDENCY_DIR="$HOME/.vim/pack/$(whoami)/start/"
 
 echo "Vim dependencies will be cloned in '$VIM_DEPENDENCY_DIR'"
 mkdir --parents --verbose $VIM_DEPENDENCY_DIR
+cd $VIM_DEPENDENCY_DIR
 
 DEPS=(
   airblade/vim-gitgutter.git
@@ -28,8 +29,6 @@ DEPS=(
   wincent/command-t.git
   wincent/terminus.git
 )
-
-cd $VIM_DEPENDENCY_DIR
 
 for DEP in ${DEPS[@]}; do
   REPO="https://github.com/$DEP"
