@@ -108,7 +108,7 @@ set autoread
 autocmd FileType gitcommit setlocal spell spelllang=en_us
 
 " turn on wordwrap for md files
-autocmd FileType *.md set wrap
+autocmd FileType *.md set wrap linebreak nolist
 
 " Built in matchit macro allows '%' to work well with Ruby code
 " Works with at least Vim 7.4
