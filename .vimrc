@@ -117,6 +117,9 @@ cmap <C-A> <C-B>
 " show matches while typing the pattern
 set incsearch
 
+" Try different regexp engine
+set regexpengine=1
+
 " without this the mouse doesn't work past the 220th column
 " https://stackoverflow.com/a/19253251/2095714
 " set ttymouse=sgr
