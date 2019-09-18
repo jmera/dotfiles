@@ -4,5 +4,6 @@
 	initials = jm
 [core]
 	pager = diff-highlight | less
+	excludesfile = ~/.gitignore
 [interactive]
 	diffFilter = diff-highlight | less
