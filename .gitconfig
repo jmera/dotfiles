@@ -7,3 +7,5 @@
 	excludesfile = ~/.gitignore
 [interactive]
 	diffFilter = diff-highlight | less
+[pull]
+	rebase = false
