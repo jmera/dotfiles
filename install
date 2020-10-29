@@ -15,8 +15,8 @@ DEPS=(
   jiangmiao/auto-pairs
   jparise/vim-graphql
   keith/rspec.vim
+  maxmellon/vim-jsx-pretty
   mileszs/ack.vim
-  mxw/vim-jsx
   pangloss/vim-javascript
   scrooloose/nerdtree
   sstallion/vim-wildignore
