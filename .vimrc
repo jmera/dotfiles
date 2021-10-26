@@ -101,6 +101,11 @@ set listchars=trail:·,tab:>-
 
 set autoread
 
+" Remove swap and backup files from your working directory
+" https://vim.fandom.com/wiki/Remove_swap_and_backup_files_from_your_working_directory
+set backupdir=$TMPDIR
+set directory=$TMPDIR
+
 " Disabling for now, makes vim super slow
 " set cursorline
 
