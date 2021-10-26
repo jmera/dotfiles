@@ -13,7 +13,6 @@
 *.o
 *.png
 *.rdb
-*.svg
 *.swo
 *.swp
 *.log
