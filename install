@@ -13,6 +13,7 @@ DEPS=(
   airblade/vim-gitgutter
   altercation/vim-colors-solarized
   jiangmiao/auto-pairs
+  jidn/vim-dbml
   jparise/vim-graphql
   keith/rspec.vim
   maxmellon/vim-jsx-pretty
