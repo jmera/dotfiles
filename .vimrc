@@ -73,7 +73,7 @@ map <leader>w :w<CR>
 map <leader>v :source ~/.vimrc<CR>
 
 " Git blame
-map <leader>g :Gblame<CR>
+map <leader>g :Git blame<CR>
 
 " Enable ruler
 set ruler
