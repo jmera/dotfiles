@@ -160,3 +160,6 @@ end
 autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
 autocmd FileChangedShellPost * echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
 autocmd BufNewFile,BufRead Dockerfile* set syntax=dockerfile
+
+" Test https://unix.stackexchange.com/questions/150093/vim-delay-when-using-ctrlc-but-only-in-sql-files
+let g:ftplugin_sql_omni_key = '<C-j>'
