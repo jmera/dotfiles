@@ -9,3 +9,5 @@
 	diffFilter = diff-highlight | less
 [pull]
 	rebase = false
+[init]
+	defaultBranch = main
