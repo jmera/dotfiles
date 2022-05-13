@@ -28,7 +28,7 @@ let g:ackprg = 'ag --vimgrep'
 set nowrap
 " https://vimhelp.org/change.txt.html#fo-table
 set formatoptions=tcq
-set textwidth=80
+set textwidth=120
 
 " Use Ctrl+(h/l) to cycle windows
 nmap <silent> <c-h> :tabprevious<CR>
