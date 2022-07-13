@@ -1,7 +1,7 @@
-""""" Set the comma as the leader
-let mapleader=","
+" Set the comma as the leader
+let mapleader = ","
 
-""""" Color stuff
+"" Color and Syntax Highlighting
 " https://stackoverflow.com/questions/33380451/is-there-a-difference-between-syntax-on-and-syntax-enable-in-vimscript
 if !exists("g:syntax_on")
   syntax enable
@@ -10,21 +10,41 @@ endif
 filetype plugin indent on
 colorscheme solarized
 set background=dark
-let g:solarized_termcolors=256
+let g:solarized_termcolors = 256
 
-""""" mouse things
+"" Mouse
 set mouse=a
-set ttymouse=xterm2 " make the thing faster
+" Makes the mouse faster
+set ttymouse=xterm2
 
-""""" NERDTree
+"" NERDTree
 " opens with '\', '|' opens current file on NERDTree
 nmap \ :NERDTreeToggle<CR>
 nmap \| :NERDTreeFind<CR>
 
-""""" ack.vim => Use ag instead of ack
-let g:ackprg = 'ag --vimgrep'
+let NERDTreeRespectWildIgnore = 1
+let NERDTreeShowHidden = 1
 
-""""" General configuration
+"" ack.vim
+" Use ag instead of ack
+let g:ackprg = "ag --vimgrep"
+
+" https://github.com/mileszs/ack.vim/issues/18#issuecomment-21663591
+" https://stackoverflow.com/q/13322161/2095714
+set shellpipe=>
+
+"" Command-T
+" Wait 25 milliseconds before updating the match list
+let g:CommandTInputDebounce = 25
+
+" Define different mappings
+map <leader>F :CommandTFlush<CR>:CommandT<CR>
+map <leader>f :CommandT<CR>
+
+" Default file scanner, 'ruby' is slow
+let g:CommandTFileScanner = "find"
+
+"" General Configuration
 set nowrap
 " https://vimhelp.org/change.txt.html#fo-table
 set formatoptions=tcq
@@ -37,24 +57,8 @@ nmap <silent> <c-l> :tabnext<CR>
 " Comment stuff out
 map <leader>/ gcc
 
-"""""
-" https://github.com/mileszs/ack.vim/issues/18#issuecomment-21663591
-" https://stackoverflow.com/q/13322161/2095714
-set shellpipe=>
-
-""""" In insert mode, ctrl+w backspaces over everything
+" In insert mode, ctrl+w backspaces over everything
 set backspace=indent,eol,start
-
-"""" Command-T
-" Wait 25 milliseconds before updating the match list
-let g:CommandTInputDebounce = 25
-
-" Define different mappings
-map <leader>F :CommandTFlush<CR>:CommandT<CR>
-map <leader>f :CommandT<CR>
-
-" Default file scanner, 'ruby' is slow
-let g:CommandTFileScanner = "find"
 
 " Copy current file path to system clipboard
 map <leader>cp :let @+ = fnamemodify(expand("%"), ":.")<CR>:echo "Copied: ".fnamemodify(expand("%"), ":.")<CR>
@@ -66,9 +70,6 @@ set hlsearch
 " Press Space to turn off highlighting and clear any message already displayed.
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
-let NERDTreeRespectWildIgnore = 1
-let NERDTreeShowHidden = 1
-
 " Save
 map <leader>w :w<CR>
 
@@ -78,8 +79,15 @@ map <leader>v :source ~/.vimrc<CR>
 " Git blame
 map <leader>g :Git blame<CR>
 
-" Enable ruler
+" Enable the ruler
 set ruler
+
+" Enable line numbers
+set number
+
+" Show trailing whitespace as '·' and tab characters as '>-'
+set list
+set listchars=trail:·,tab:>-
 
 set tabstop=2
 set expandtab
@@ -89,19 +97,10 @@ set smarttab
 set shiftwidth=2
 set smartcase
 set ignorecase
-" Enable line numbers
-set number
-
 set splitright
 set splitbelow
 set scrolloff=3
-
-" utf-8 encoding
 set encoding=utf-8
-
-set list        " Show whitespace
-set listchars=trail:·,tab:>-
-
 set autoread
 
 " Remove swap and backup files from your working directory
@@ -120,13 +119,13 @@ autocmd FileType gitcommit setlocal spell spelllang=en_us
 " Works with at least Vim 7.4
 runtime macros/matchit.vim
 
-" In command-line mode, <C-A> should go to the front of the line, as in bash.
+" Similar to bash, in command-line mode <C-a> moves the cursor to the beginning of the line
 cmap <C-A> <C-B>
 
-" show matches while typing the pattern
+" Show matches while typing the pattern
 set incsearch
 
-" Try different regexp engine
+" Try a different regexp engine
 set regexpengine=1
 
 " without this the mouse doesn't work past the 220th column
@@ -153,7 +152,7 @@ nnoremap <C-e>  3<C-e>
 nnoremap <C-y>  3<C-y>
 
 " Change cursor in insert/normal mode
-if exists('$TMUX')
+if exists("$TMUX")
   let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
   let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 end
@@ -163,4 +162,4 @@ autocmd FileChangedShellPost * echohl WarningMsg | echo "File changed on disk. B
 autocmd BufNewFile,BufRead Dockerfile* set syntax=dockerfile
 
 " Test https://unix.stackexchange.com/questions/150093/vim-delay-when-using-ctrlc-but-only-in-sql-files
-let g:ftplugin_sql_omni_key = '<C-j>'
+let g:ftplugin_sql_omni_key = "<C-j>"
