@@ -109,8 +109,9 @@ set autoread
 set backupdir=$TMPDIR
 set directory=$TMPDIR
 
-" Disabling for now, makes vim super slow
-" set cursorline
+" In past experiences this has made vim very slow and unresponsive. I'm putting this back to see if these issues have
+" been fixed in newer versions. Comment out if it becomes too much of a headache.
+set cursorline
 
 " spellcheck for git commits
 autocmd FileType gitcommit setlocal spell spelllang=en_us
