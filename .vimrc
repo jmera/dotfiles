@@ -38,7 +38,7 @@ nmap <silent> <c-l> :tabnext<CR>
 map <leader>/ gcc
 
 """""
-" https://github.com/mileszs/ack.vim/issues/18
+" https://github.com/mileszs/ack.vim/issues/18#issuecomment-21663591
 " https://stackoverflow.com/q/13322161/2095714
 set shellpipe=>
 
