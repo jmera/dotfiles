@@ -1,6 +1,7 @@
 set tab-size = 2
 
-set main-view = date:relative id:yes author:full,width=20 commit-title:yes,graph=yes,refs=yes
+set main-view = date:custom id:yes author:full,width=20 commit-title:yes,graph=yes,refs=yes
+set main-view-date-format = "%m-%d-%y %H:%M"
 set diff-highlight = true
 
 color  default  default  default  normal
