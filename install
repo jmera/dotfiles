@@ -45,4 +45,4 @@ echo "Creating symlink for wildignore"
 ln -sv "$SCRIPT_DIR/wildignore" "$HOME/.vim/"
 
 cd "$VIM_DEPENDENCY_DIR/command-t"
-rake make
+make
