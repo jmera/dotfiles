@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+set -eux
+
+(cd $HOME && rm -rf .gitconfig .gitignore .irbrc .pryrc .tigrc .tmux.conf .vimrc .vim/)
