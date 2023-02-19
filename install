@@ -11,7 +11,6 @@ cd $VIM_DEPENDENCY_DIR
 
 DEPS=(
   airblade/vim-gitgutter
-  altercation/vim-colors-solarized
   jiangmiao/auto-pairs
   jidn/vim-dbml
   jparise/vim-graphql
@@ -43,6 +42,11 @@ echo "$DOTFILES" | xargs -t -I % ln -sv "$SCRIPT_DIR/"% "$HOME"
 
 echo "Creating symlink for wildignore"
 ln -sv "$SCRIPT_DIR/wildignore" "$HOME/.vim/"
+
+echo "Installing color scheme"
+mkdir -p $HOME/.vim/colors/
+curl https://raw.githubusercontent.com/ericbn/vim-solarized/master/colors/solarized.vim \
+  --output $HOME/.vim/colors/solarized.vim
 
 cd "$VIM_DEPENDENCY_DIR/command-t"
 make
