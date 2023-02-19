@@ -1,9 +1,9 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-set -e
+set -eux
 
 SCRIPT_DIR=$PWD
-VIM_DEPENDENCY_DIR="$HOME/.vim/pack/$(whoami)/start/"
+VIM_DEPENDENCY_DIR="$HOME/.vim/pack/$(whoami)/start"
 
 echo "Vim dependencies will be cloned in '$VIM_DEPENDENCY_DIR'"
 mkdir -pv $VIM_DEPENDENCY_DIR
