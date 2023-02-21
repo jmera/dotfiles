@@ -38,8 +38,8 @@ set shellpipe=>
 let g:CommandTInputDebounce = 25
 
 " Define different mappings
-map <leader>F :CommandTFlush<CR>:CommandT<CR>
-map <leader>f :CommandT<CR>
+map <leader>F :CommandTFlush<CR>:KommandT<CR>
+map <leader>f :KommandT<CR>
 
 " Default file scanner, 'ruby' is slow
 let g:CommandTFileScanner = "find"
