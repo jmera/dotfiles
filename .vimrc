@@ -51,6 +51,9 @@ set formatoptions=tcq
 set textwidth=120
 set colorcolumn=120
 
+" Syntax highlighting breaks on large files
+set redrawtime=4000
+
 " Use Ctrl+(h/l) to cycle windows
 nmap <silent> <c-h> :tabprevious<CR>
 nmap <silent> <c-l> :tabnext<CR>
