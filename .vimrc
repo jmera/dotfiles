@@ -2,13 +2,10 @@
 let mapleader = ","
 
 "" Color and Syntax Highlighting
-" https://stackoverflow.com/questions/33380451/is-there-a-difference-between-syntax-on-and-syntax-enable-in-vimscript
-if !exists("g:syntax_on")
-  syntax enable
-endif
-
 filetype plugin indent on
+syntax enable
 colorscheme solarized
+
 set background=dark
 set termguicolors
 
