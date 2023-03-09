@@ -61,8 +61,10 @@ map <leader>/ gcc
 set backspace=indent,eol,start
 
 " Copy current file path to system clipboard
-map <leader>cp :let @+ = fnamemodify(expand("%"), ":.")<CR>:echo "Copied: ".fnamemodify(expand("%"), ":.")<CR>
-map <leader>C :let @+ = fnamemodify(expand("%"), ":.").":".line(".")<CR>:echo "Copied: ".fnamemodify(expand("%"), ":.").":".line(".")<CR>
+map <leader>cp :let @+ = fnamemodify(expand("%"), ":.")
+  \ <CR>:echo "Copied: ".fnamemodify(expand("%"), ":.")<CR>
+map <leader>C :let @+ = fnamemodify(expand("%"), ":.").":".line(".")
+  \ <CR>:echo "Copied: ".fnamemodify(expand("%"), ":.").":".line(".")<CR>
 
 " Highlight search matches (*)
 set hlsearch
@@ -145,7 +147,9 @@ function! StripTrailingWhitespace()
   'a
 endfunction
 
-autocmd BufWritePre *.rb,*.yml,*.js,*.jsx,*.css,*.less,*.sass,*.scss,*.html,*.xml,*.erb,*.haml,*.sh,Dockerfile*,*.rake,*.hbs call StripTrailingWhitespace()
+autocmd BufWritePre
+  \ *.rb,*.yml,*.js,*.jsx,*.css,*.less,*.sass,*.scss,*.html,*.xml,*.erb,*.haml,*.sh,Dockerfile*,*.rake,*.hbs
+  \ call StripTrailingWhitespace()
 
 " Faster scrolling
 nnoremap <C-e>  3<C-e>
