@@ -58,7 +58,7 @@ nmap <silent> <c-l> :tabnext<CR>
 " Comment stuff out
 map <leader>/ gcc
 
-" In insert mode, ctrl+w backspaces over everything
+" In insert mode, ctrl+w deletes words
 set backspace=indent,eol,start
 
 " Copy current file path to system clipboard
