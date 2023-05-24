@@ -14,6 +14,7 @@ DEPS=(
   jiangmiao/auto-pairs
   jidn/vim-dbml
   jparise/vim-graphql
+  jvirtanen/vim-hcl
   keith/rspec.vim
   maxmellon/vim-jsx-pretty
   mileszs/ack.vim
